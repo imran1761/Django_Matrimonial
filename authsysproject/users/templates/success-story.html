@@ -1,0 +1,1146 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+    <meta name="theme-color" content="#549a11">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#549a11">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#549a11">
+
+    <!-- WEB SITE TITLE DESCRIPTION-->
+    <title>Success Story</title>
+    <meta name="keyword" content="Welcome to Inlogix Infoway" />
+    <meta name="description" content="Welcome to Inlogix Infoway" />
+    <!-- WEB SITE TITLE DESCRIPTION END-->
+
+    <!-- WEB SITE FAVICON-->
+    <link type="image/x-icon" href="{% static 'img/favicon-96x96.png' %}" rel="shortcut icon" />
+    <!-- WEB SITE FAVICON END-->
+
+    <!--CUSTOM CSS FRAMEWORK FROM THE GREEN TECHNOLOGIES WITH BOOTSTRAP-->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom-responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <!--CUSTOM CSS FRAMEWORK FROM THE GREEN TECHNOLOGIES WITH BOOTSTRAP END-->
+
+    <!--CUSTOM FONT ICON FROM THE GREEN TECHNOLOGIES & FONT AWESOME -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://greenicon.thegreentech.in/green-font-icons/green-font-icons.min.css" rel="stylesheet">
+    <!--CUSTOM FONT ICON FROM THE GREEN TECHNOLOGIES & FONT AWESOME END -->
+
+    <!--GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!--GOOGLE FONTS END-->
+
+    <!-- CHOOSEN CSS -->
+    <link rel="stylesheet" href="{% static 'css/prism.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chosen.css' %}">
+    <!-- CHOOSEN CSS END -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="{% static 'js/html5shiv.min.js' %}"></script>
+          <script src="{% static 'js/respond.min.js' %}"></script>
+        <![endif]-->
+    <script type="text/javascript">
+        var numDays = {
+            '01': 31,
+            '02': 28,
+            '03': 31,
+            '04': 30,
+            '05': 31,
+            '06': 30,
+            '07': 31,
+            '08': 31,
+            '09': 30,
+            '10': 31,
+            '11': 30,
+            '12': 31
+        };
+
+        function setDays(oMonthSel, oDaysSel, oYearSel) {
+            var nDays, oDaysSelLgth, opt, i = 1;
+            nDays = numDays[oMonthSel[oMonthSel.selectedIndex].value];
+            if (nDays == 28 && oYearSel[oYearSel.selectedIndex].value % 4 == 0)
+                ++nDays;
+            oDaysSelLgth = oDaysSel.length;
+            if (nDays != oDaysSelLgth) {
+                if (nDays < oDaysSelLgth)
+                    oDaysSel.length = nDays;
+                else
+                    for (i; i < nDays - oDaysSelLgth + 1; i++) {
+                        opt = new Option(oDaysSelLgth + i, oDaysSelLgth + i);
+                        oDaysSel.options[oDaysSel.length] = opt;
+                    }
+            }
+            var oForm = oMonthSel.form;
+            var month = oMonthSel.options[oMonthSel.selectedIndex].value;
+            var day = oDaysSel.options[oDaysSel.selectedIndex].value;
+            var year = oYearSel.options[oYearSel.selectedIndex].value;
+        }
+
+        function setDays1(oMonthSel, oDaysSel, oYearSel) {
+            var nDays, oDaysSelLgth, opt, i = 1;
+            nDays = numDays[oMonthSel[oMonthSel.selectedIndex].value];
+            if (nDays == 28 && oYearSel[oYearSel.selectedIndex].value % 4 == 0)
+                ++nDays;
+            oDaysSelLgth = oDaysSel.length;
+            if (nDays != oDaysSelLgth) {
+                if (nDays < oDaysSelLgth)
+                    oDaysSel.length = nDays;
+                else
+                    for (i; i < nDays - oDaysSelLgth + 1; i++) {
+                        opt = new Option(oDaysSelLgth + i, oDaysSelLgth + i);
+                        oDaysSel.options[oDaysSel.length] = opt;
+                    }
+            }
+            var oForm = oMonthSel.form;
+            var month1 = oMonthSel.options[oMonthSel.selectedIndex].value;
+            var day1 = oDaysSel.options[oDaysSel.selectedIndex].value;
+            var year1 = oYearSel.options[oYearSel.selectedIndex].value;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- ICON LOADER-->
+    <div class="preloader-wrapper text-center">
+        <div class="loader"></div>
+        <h5>Loading...</h5>
+    </div>
+    <!-- ICON LOADER END-->
+
+    <div id="body" style="display:none">
+        <div id="wrap">
+            <div id="main">
+                <!-- HEADER -->
+<!--                <div class="container-fluid inHeaderAdminLink">-->
+<!--                    <div class="row">-->
+<!--                        <div class="container">-->
+<!--                            <div class="col-xxl-16 text-center">-->
+<!--                                <a href="admin/index.php">Admin Login</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <header class="container gtHeaderForm">
+                    <div class="row">
+
+                        <!-- LOGO -->
+                        <div class="col-xxl-5 col-xl-4 col-xs-8 col-md-8 col-lg-5">
+                            <a href="index" class="ripplelink">
+                    <img src="{% static 'img/logo.png' %}" class="img-responsive gt-header-logo">
+                </a>
+                        </div>
+                        <!-- LOGO END -->
+                        <!-- HEADER LOGIN FORM STARTS HERE -->
+<!--                        <div class="col-xxl-8 col-xl-10 col-lg-11 col-xs-16 col-sm-16 col-md-16 pull-right gt-margin-top-20 hidden-xs hidden-sm hidden-md">-->
+<!--                            <div class="row">-->
+<!--                                <form action="login" method="post" id="headerloginForm">-->
+<!--                                    <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope fa-fw"></i></span>-->
+<!--                                            <input type="text" class="gt-form-control" name="username" id="username" placeholder="Enter your login id" aria-describedby="basic-addon1" required>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <span class="input-group-addon" id="basic-addon2"><i class="fa fa-unlock-alt fa-fw"></i></span>-->
+<!--                                            <input type="password" class="gt-form-control" placeholder="Enter your password" name="password" id="password" aria-describedby="basic-addon2" required>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xxl-4 col-xl-4 col-lg-4 form-group gt-margin-bottom-10">-->
+<!--                                        <input type="submit" class="btn gt-btn-orange btn-block gt-btn-lg" name="member_login" value="LOGIN">-->
+<!--                                    </div>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-xxl-5 pull-right text-right">-->
+<!--                                    <a href="forgot-password-password" class="gt-text-Grey">Need Help To login ?</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- HEADER LOGIN FORM END HERE -->
+
+                        <!-- HEADER LOGIN MOBILE-->
+                        <div class="col-xs-8 visible-xs visible-sm visible-md text-right">
+                            <a class="btn gt-btn-orange gt-margin-top-15" role="button" data-toggle="collapse" href="#collapseHeadLogin" aria-expanded="false" aria-controls="collapseHeadLogin">
+ 					Login
+				</a>
+                        </div>
+                        <!-- HEADER LOGIN MOBILE END-->
+                    </div>
+                    <div class="container gt-margin-top-15">
+                        <div class="row ">
+                            <div class="collapse" id="collapseHeadLogin">
+                                <div class="row">
+                                    <form action="login" method="post" id="headerloginForm">
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope fa-fw"></i></span>
+                                                <input type="text" class="gt-form-control" name="username" id="username" placeholder="Enter your login id" aria-describedby="basic-addon1" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-unlock-alt fa-fw"></i></span>
+                                                <input type="password" class="gt-form-control" placeholder="Enter your password" name="password" id="password" aria-describedby="basic-addon2" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-4 col-xl-4 col-lg-4 form-group gt-margin-bottom-10">
+                                            <input type="submit" class="btn gt-btn-orange btn-block gt-btn-lg" name="member_login" value="LOGIN">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl-5 pull-right text-right">
+                                        <a href="/forgot-password-password" class="gt-text-Grey">Need Help To login ?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <nav class="navbar gt-navbar-green flat gt-margin-bottom-0">
+                    <div class="container">
+
+                        <!-- MOBILE MENU BUTTON -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:rgba(247,247,247,1.00);color:rgba(0,0,0,1.00) !important;">
+                    <span>MENU</span>
+                </button>
+                        </div>
+                        <!-- MOBILE MENU BUTTON END-->
+
+                        <!-- MENU ITEMS-->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li class="active ripplelink"><a href="/index"><i class="fa fa-home gt-margin-right-10 fa-lg"></i>HOME</a></li>
+                                <li class="dropdown">
+                                    <a href="/search" class="dropdown-toggle ripplelink" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="gt-margin-right-5"><i class="fa fa-search gt-margin-right-10 fa-lg"></i>SEARCH</span><span class="fa fa-angle-down"></span>
+                        </a>
+                                    <ul class="dropdown-menu flat" role="menu">
+                                        <li><a href="search?gt-quick-search">Quick Search</a></li>
+                                        <li><a href="search?gt-basic-search">Basic Search</a></li>
+                                        <li><a href="search?gt-advance-search">Advanced Search</a></li>
+                                        <li><a href="search?gt-keyword-search">Keyword Search</a></li>
+                                        <li><a href="search?gt-location-search">Location Search</a></li>
+                                        <li><a href="search?gt-occupation-search">Occupation Search</a></li>
+                                    </ul>
+                                </li>
+                                <li class="ripplelink"><a href="/success-story"><i class="fa fa-users gt-margin-right-10 fa-lg"></i>SUCCESS STORY</a></li>
+                                <li class="ripplelink"><a href="/membershipplans"><i class="fa fa-star gt-margin-right-10 fa-lg"></i>MEMBERSHIP</a></li>
+                                <li class="ripplelink"><a href="/contactUs"><i class="fa fa-phone-square gt-margin-right-10 fa-lg"></i>CONTACT US</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active ripplelink gt-border-right-green gt-border-left-green gtBorderRightSMXS0 gtBorderLeftSMXS0">
+                                    <a href="/login"><i class="fa fa-sign-in gt-margin-right-10 fa-lg"></i>LOGIN</a>
+                                </li>
+                                <li class="ripplelink gt-border-right-green gtBorderRightSMXS0">
+                                    <a href="/index"><i class="fa fa-pencil-square gt-margin-right-10 fa-lg"></i>SIGN UP</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- MENU ITEMS END -->
+
+                    </div>
+                </nav>
+
+                <!-- To decrese notification count when click on notification-->
+                <script>
+                    function notification(noti_id) {
+                        $.ajax({
+                            url: "web-services/notification",
+                            type: "POST",
+                            data: "noti_id=" + noti_id,
+                            cache: false,
+                            success: function(response) {
+                                location.reload();
+
+                            }
+                        });
+                        return true;
+                    }
+                </script>
+                <!-- HEADER END-->
+                <div class="container">
+                    <h2 class="text-center">
+                        <i class="fa fa-heart gt-margin-right-10 gt-text-orange"></i>Happy Marriages
+                    </h2>
+                    <p class="gt-margin-bottom-30 text-center">Check it out our success stories who found their life partner here.</p>
+                    <div class="row">
+                        <div class="gt-tabs gt-success-story col-xs-16">
+                            <div role="tabpanel">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active text-center">
+                                        <a href="#gt-success-tab-1" aria-controls="gt-success-tab-1" role="tab" data-toggle="tab">
+                        				Success Stories
+                        			</a>
+                                    </li>
+                                    <li role="presentation" class="text-center">
+                                        <a href="#gt-success-tab-2" aria-controls="gt-success-tab-2" role="tab" data-toggle="tab">
+                        				Post your success story
+                       	 			</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <!--- SUCCESS STORY ---->
+                                    <div role="tabpanel" class="tab-pane active" id="gt-success-tab-1">
+                                        <h3 class="text-center">
+                                            Success Story
+                                        </h3>
+                                        <h5 class="text-center">
+                                            Some of our happily married couples story
+                                        </h5>
+                                        <div class="row gt-margin-top-30">
+
+                                            <div id="suc_story"></div>
+                                        </div>
+                                    </div>
+                                    <!--- SUCCESS STORY END ---->
+                                    <!--- POST SUCCESS STORY ---->
+                                    <div role="tabpanel" class="tab-pane" id="gt-success-tab-2">
+                                        <h3 class="text-center">Post Success Story</h3>
+                                        <h5 class="text-center gt-margin-bottom-30">Post your success story here</h5>
+                                        <form class="col-xxl-10 col-xxl-offset-3 col-xl-10 col-xl-offset-3" action="" method="post" name="suc-form" id="suc-form" enctype="multipart/form-data">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                        				Bride Id <span class="text-danger gtRegMandatory">*</span>
+                                        			</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <input type="text" Class="gt-form-control" name="brideid" id="brideid" onChange="chackbride(this.value);" data-validetta="required" placeholder="Enter Bride Id">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                        				Bride Name <span class="text-danger gtRegMandatory">*</span>
+                                        			</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <input type="text" Class="gt-form-control" name="bridename" id="bridename" data-validetta="required" placeholder="Enter Bride Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                        				Groom Id <span class="text-danger gtRegMandatory">*</span>
+                                        			</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <input type="text" Class="gt-form-control" name="groomid" id="groomid" onChange="chackgroom(this.value);" data-validetta="required" placeholder="Enter Groom Id">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                        				Groom Name<span class="text-danger gtRegMandatory">*</span>
+                                        			</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <input type="text" Class="gt-form-control" name="groomname" id="groomname" data-validetta="required" placeholder="Enter Bride Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                        				Engagement Date <span class="text-danger gtRegMandatory">*</span>
+                                        			</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <div class="row">
+                                                                <div class="col-xs-5">
+                                                                    <select name="day1" id="day1" class="gt-form-control" onchange="setDays1(month1,this,year1)" data-validetta="required">
+                                            	<option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                                                </div>
+                                                                <div class="col-xs-5">
+                                                                    <select name="month1" id="month1" class="gt-form-control" onchange="setDays1(this,day1,year1)" data-validetta="required">
+                                            		<option value="01">Jan</option>
+                                                	<option value="02">Feb</option>
+                                                	<option value="03">Mar</option>
+                                                	<option value="04">Apr</option>
+                                                	<option value="05">May</option>
+                                                	<option value="06">Jun</option>
+                                                	<option value="07">Jul</option>
+                                                	<option value="08">Aug</option>
+                                                	<option value="09">Sep</option>
+                                                	<option value="10">Oct</option>
+                                                	<option value="11">Nov</option>
+                                                	<option value="12">Dec</option>
+                                            		</select>
+                                                                </div>
+                                                                <div class="col-xs-6">
+                                                                    <select name="year1" id="year1" class="gt-form-control" onchange="setDays1(month1,day1,this)" data-validetta="required">
+																	<option value="2022">2022</option>
+																	<option value="2021">2021</option>
+																	<option value="2020">2020</option>
+																	<option value="2019">2019</option>
+																	<option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                            	<option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                                <option value="1999">1999</option>
+                                                <option value="1998">1998</option>
+                                                <option value="1997">1997</option>
+                                                <option value="1996">1996</option>
+                                                <option value="1995">1995</option>
+                                                <option value="1994">1994</option>
+                                                <option value="1993">1993</option>
+                                                <option value="1992">1992</option>
+                                                <option value="1991">1991</option>
+                                                <option value="1990">1990</option>
+                                                <option value="1989">1989</option>
+                                                <option value="1988">1988</option>
+                                                <option value="1987">1987</option>
+                                                <option value="1986">1986</option>
+                                                <option value="1985">1985</option>
+                                            </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                        				Marriage Date <span class="text-danger gtRegMandatory">*</span>
+                                        			</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <div class="row">
+                                                                <div class="col-xs-5">
+                                                                    <select name="day" id="day" class="gt-form-control" onchange="setDays(month,this,year)" data-validetta="required">
+                                            						<option value="01">01</option>
+                                                					<option value="02">02</option>
+                                                					<option value="03">03</option>
+                                                					<option value="04">04</option>
+                                                                    <option value="05">05</option>
+                                                                    <option value="06">06</option>
+                                                                    <option value="07">07</option>
+                                                                    <option value="08">08</option>
+                                                                    <option value="09">09</option>
+                                                                    <option value="10">10</option>
+                                                                    <option value="11">11</option>
+                                                                    <option value="12">12</option>
+                                                                    <option value="13">13</option>
+                                                                    <option value="14">14</option>
+                                                                    <option value="15">15</option>
+                                                                    <option value="16">16</option>
+                                                                    <option value="17">17</option>
+                                                                    <option value="18">18</option>
+                                                                    <option value="19">19</option>
+                                                                    <option value="20">20</option>
+                                                                    <option value="21">21</option>
+                                                                    <option value="22">22</option>
+                                                                    <option value="23">23</option>
+                                                                    <option value="24">24</option>
+                                                                    <option value="25">25</option>
+                                                                    <option value="26">26</option>
+                                                                    <option value="27">27</option>
+                                                                    <option value="28">28</option>
+                                                                    <option value="29">29</option>
+                                                                    <option value="30">30</option>
+                                                                    <option value="31">31</option>
+                                            					</select>
+                                                                </div>
+                                                                <div class="col-xs-5">
+                                                                    <select name="month" id="month" class="gt-form-control" onchange="setDays(this,day,year)" data-validetta="required">
+                                                                    <option value="01">Jan</option>
+                                                                    <option value="02">Feb</option>
+                                                                    <option value="03">Mar</option>
+                                                                    <option value="04">Apr</option>
+                                                                    <option value="05">May</option>
+                                                                    <option value="06">Jun</option>
+                                                                    <option value="07">Jul</option>
+                                                                    <option value="08">Aug</option>
+                                                                    <option value="09">Sep</option>
+                                                                    <option value="10">Oct</option>
+                                                                    <option value="11">Nov</option>
+                                                                    <option value="12">Dec</option>
+                                                                </select>
+                                                                </div>
+                                                                <div class="col-xs-6">
+                                                                    <select name="year" id="year" class="gt-form-control" onchange="setDays(month,day,this)" data-validetta="required">
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2014">2014</option>
+                                                                    <option value="2013">2013</option>
+                                                                    <option value="2012">2012</option>
+                                                                    <option value="2011">2011</option>
+                                                                    <option value="2010">2010</option>
+                                                                    <option value="2009">2009</option>
+                                                                    <option value="2008">2008</option>
+                                                                    <option value="2007">2007</option>
+                                                                    <option value="2006">2006</option>
+                                                                    <option value="2005">2005</option>
+                                                                    <option value="2004">2004</option>
+                                                                    <option value="2003">2003</option>
+                                                                    <option value="2002">2002</option>
+                                                                    <option value="2001">2001</option>
+                                                                    <option value="2000">2000</option>
+                                                                    <option value="1999">1999</option>
+                                                                    <option value="1998">1998</option>
+                                                                    <option value="1997">1997</option>
+                                                                    <option value="1996">1996</option>
+                                                                    <option value="1995">1995</option>
+                                                                    <option value="1994">1994</option>
+                                                                    <option value="1993">1993</option>
+                                                                    <option value="1992">1992</option>
+                                                                    <option value="1991">1991</option>
+                                                                    <option value="1990">1990</option>
+                                                                    <option value="1989">1989</option>
+                                                                    <option value="1988">1988</option>
+                                                                    <option value="1987">1987</option>
+                                                                    <option value="1986">1986</option>
+                                                                    <option value="1985">1985</option>
+                                            					</select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                                    	Upload Photo <span class="text-danger gtRegMandatory">*</span>
+                                                	</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <input type="file" Class="gt-form-control" name="susphoto" data-validetta="required" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                                        Address <span class="text-danger"></span>
+                                                    </label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <textarea Class="gt-form-control" rows="5" name="address" id="address" placeholder="Enter Address"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                                        Country Living In <span class="text-danger gtRegMandatory">*</span>
+                                                    </label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <select class="gt-form-control" name="country" id="country" data-validetta="required">
+                                                        	<option value="">Select Your Country</option>
+                                                       		                                                        	<option value="Andorra">Andorra</option>
+                                                        	                                                        	<option value="United Arab Emirates">United Arab Emirates</option>
+                                                        	                                                        	<option value="Afghanistan">Afghanistan</option>
+                                                        	                                                        	<option value="Antigua And Barbuda">Antigua And Barbuda</option>
+                                                        	                                                        	<option value="Albania">Albania</option>
+                                                        	                                                        	<option value="Armenia">Armenia</option>
+                                                        	                                                        	<option value="Angola">Angola</option>
+                                                        	                                                        	<option value="Antarctica">Antarctica</option>
+                                                        	                                                        	<option value="Argentina">Argentina</option>
+                                                        	                                                        	<option value="American Samoa">American Samoa</option>
+                                                        	                                                        	<option value="Austria">Austria</option>
+                                                        	                                                        	<option value="Australia">Australia</option>
+                                                        	                                                        	<option value="Aruba">Aruba</option>
+                                                        	                                                        	<option value="Aland Islands">Aland Islands</option>
+                                                        	                                                        	<option value="Azerbaijan">Azerbaijan</option>
+                                                        	                                                        	<option value="Bosnia And Herzegovina">Bosnia And Herzegovina</option>
+                                                        	                                                        	<option value="Barbados">Barbados</option>
+                                                        	                                                        	<option value="Bangladesh">Bangladesh</option>
+                                                        	                                                        	<option value="Belgium">Belgium</option>
+                                                        	                                                        	<option value="Burkina Faso">Burkina Faso</option>
+                                                        	                                                        	<option value="Bulgaria">Bulgaria</option>
+                                                        	                                                        	<option value="Bahrain">Bahrain</option>
+                                                        	                                                        	<option value="Burundi">Burundi</option>
+                                                        	                                                        	<option value="Benin">Benin</option>
+                                                        	                                                        	<option value="Bermuda">Bermuda</option>
+                                                        	                                                        	<option value="Brunei">Brunei</option>
+                                                        	                                                        	<option value="Bolivia">Bolivia</option>
+                                                        	                                                        	<option value="Bonaire, Saint Eustatius And Saba ">Bonaire, Saint Eustatius And Saba </option>
+                                                        	                                                        	<option value="Brazil">Brazil</option>
+                                                        	                                                        	<option value="Bahamas">Bahamas</option>
+                                                        	                                                        	<option value="Bhutan">Bhutan</option>
+                                                        	                                                        	<option value="Bouvet Island">Bouvet Island</option>
+                                                        	                                                        	<option value="Botswana">Botswana</option>
+                                                        	                                                        	<option value="Belarus">Belarus</option>
+                                                        	                                                        	<option value="Belize">Belize</option>
+                                                        	                                                        	<option value="Canada">Canada</option>
+                                                        	                                                        	<option value="Democratic Republic Of The Congo">Democratic Republic Of The Congo</option>
+                                                        	                                                        	<option value="Central African Republic">Central African Republic</option>
+                                                        	                                                        	<option value="Republic Of The Congo">Republic Of The Congo</option>
+                                                        	                                                        	<option value="Switzerland">Switzerland</option>
+                                                        	                                                        	<option value="Ivory Coast">Ivory Coast</option>
+                                                        	                                                        	<option value="Chile">Chile</option>
+                                                        	                                                        	<option value="Cameroon">Cameroon</option>
+                                                        	                                                        	<option value="China">China</option>
+                                                        	                                                        	<option value="Colombia">Colombia</option>
+                                                        	                                                        	<option value="Costa Rica">Costa Rica</option>
+                                                        	                                                        	<option value="Cuba">Cuba</option>
+                                                        	                                                        	<option value="Cape Verde">Cape Verde</option>
+                                                        	                                                        	<option value="Cyprus">Cyprus</option>
+                                                        	                                                        	<option value="Czech Republic">Czech Republic</option>
+                                                        	                                                        	<option value="Germany">Germany</option>
+                                                        	                                                        	<option value="Djibouti">Djibouti</option>
+                                                        	                                                        	<option value="Denmark">Denmark</option>
+                                                        	                                                        	<option value="Dominica">Dominica</option>
+                                                        	                                                        	<option value="Dominican Republic">Dominican Republic</option>
+                                                        	                                                        	<option value="Algeria">Algeria</option>
+                                                        	                                                        	<option value="Ecuador">Ecuador</option>
+                                                        	                                                        	<option value="Estonia">Estonia</option>
+                                                        	                                                        	<option value="Egypt">Egypt</option>
+                                                        	                                                        	<option value="Western Sahara">Western Sahara</option>
+                                                        	                                                        	<option value="Eritrea">Eritrea</option>
+                                                        	                                                        	<option value="Spain">Spain</option>
+                                                        	                                                        	<option value="Ethiopia">Ethiopia</option>
+                                                        	                                                        	<option value="Finland">Finland</option>
+                                                        	                                                        	<option value="Fiji">Fiji</option>
+                                                        	                                                        	<option value="Micronesia">Micronesia</option>
+                                                        	                                                        	<option value="Faroe Islands">Faroe Islands</option>
+                                                        	                                                        	<option value="France">France</option>
+                                                        	                                                        	<option value="Gabon">Gabon</option>
+                                                        	                                                        	<option value="United Kingdom">United Kingdom</option>
+                                                        	                                                        	<option value="Grenada">Grenada</option>
+                                                        	                                                        	<option value="Georgia">Georgia</option>
+                                                        	                                                        	<option value="French Guiana">French Guiana</option>
+                                                        	                                                        	<option value="Guernsey">Guernsey</option>
+                                                        	                                                        	<option value="Ghana">Ghana</option>
+                                                        	                                                        	<option value="Greenland">Greenland</option>
+                                                        	                                                        	<option value="Gambia">Gambia</option>
+                                                        	                                                        	<option value="Guinea">Guinea</option>
+                                                        	                                                        	<option value="Guadeloupe">Guadeloupe</option>
+                                                        	                                                        	<option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                        	                                                        	<option value="Greece">Greece</option>
+                                                        	                                                        	<option value="Guatemala">Guatemala</option>
+                                                        	                                                        	<option value="Guam">Guam</option>
+                                                        	                                                        	<option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                        	                                                        	<option value="Guyana">Guyana</option>
+                                                        	                                                        	<option value="Hong Kong">Hong Kong</option>
+                                                        	                                                        	<option value="Honduras">Honduras</option>
+                                                        	                                                        	<option value="Croatia">Croatia</option>
+                                                        	                                                        	<option value="Haiti">Haiti</option>
+                                                        	                                                        	<option value="Hungary">Hungary</option>
+                                                        	                                                        	<option value="Indonesia">Indonesia</option>
+                                                        	                                                        	<option value="Ireland">Ireland</option>
+                                                        	                                                        	<option value="Israel">Israel</option>
+                                                        	                                                        	<option value="Isle Of Man">Isle Of Man</option>
+                                                        	                                                        	<option value="India">India</option>
+                                                        	                                                        	<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                        	                                                        	<option value="Iraq">Iraq</option>
+                                                        	                                                        	<option value="Iran">Iran</option>
+                                                        	                                                        	<option value="Iceland">Iceland</option>
+                                                        	                                                        	<option value="Italy">Italy</option>
+                                                        	                                                        	<option value="Jersey">Jersey</option>
+                                                        	                                                        	<option value="Jamaica">Jamaica</option>
+                                                        	                                                        	<option value="Jordan">Jordan</option>
+                                                        	                                                        	<option value="Japan">Japan</option>
+                                                        	                                                        	<option value="Kenya">Kenya</option>
+                                                        	                                                        	<option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                        	                                                        	<option value="Cambodia">Cambodia</option>
+                                                        	                                                        	<option value="Kiribati">Kiribati</option>
+                                                        	                                                        	<option value="Comoros">Comoros</option>
+                                                        	                                                        	<option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
+                                                        	                                                        	<option value="North Korea">North Korea</option>
+                                                        	                                                        	<option value="South Korea">South Korea</option>
+                                                        	                                                        	<option value="Kuwait">Kuwait</option>
+                                                        	                                                        	<option value="Kazakhstan">Kazakhstan</option>
+                                                        	                                                        	<option value="Laos">Laos</option>
+                                                        	                                                        	<option value="Lebanon">Lebanon</option>
+                                                        	                                                        	<option value="Saint Lucia">Saint Lucia</option>
+                                                        	                                                        	<option value="Liechtenstein">Liechtenstein</option>
+                                                        	                                                        	<option value="Sri Lanka">Sri Lanka</option>
+                                                        	                                                        	<option value="Liberia">Liberia</option>
+                                                        	                                                        	<option value="Lesotho">Lesotho</option>
+                                                        	                                                        	<option value="Lithuania">Lithuania</option>
+                                                        	                                                        	<option value="Luxembourg">Luxembourg</option>
+                                                        	                                                        	<option value="Latvia">Latvia</option>
+                                                        	                                                        	<option value="Libya">Libya</option>
+                                                        	                                                        	<option value="Morocco">Morocco</option>
+                                                        	                                                        	<option value="Monaco">Monaco</option>
+                                                        	                                                        	<option value="Moldova">Moldova</option>
+                                                        	                                                        	<option value="Montenegro">Montenegro</option>
+                                                        	                                                        	<option value="Madagascar">Madagascar</option>
+                                                        	                                                        	<option value="Marshall Islands">Marshall Islands</option>
+                                                        	                                                        	<option value="Macedonia">Macedonia</option>
+                                                        	                                                        	<option value="Mali">Mali</option>
+                                                        	                                                        	<option value="Myanmar">Myanmar</option>
+                                                        	                                                        	<option value="Mongolia">Mongolia</option>
+                                                        	                                                        	<option value="Macao">Macao</option>
+                                                        	                                                        	<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                        	                                                        	<option value="Martinique">Martinique</option>
+                                                        	                                                        	<option value="Mauritania">Mauritania</option>
+                                                        	                                                        	<option value="Montserrat">Montserrat</option>
+                                                        	                                                        	<option value="Mauritius">Mauritius</option>
+                                                        	                                                        	<option value="Maldives">Maldives</option>
+                                                        	                                                        	<option value="Malawi">Malawi</option>
+                                                        	                                                        	<option value="Mexico">Mexico</option>
+                                                        	                                                        	<option value="Malaysia">Malaysia</option>
+                                                        	                                                        	<option value="Mozambique">Mozambique</option>
+                                                        	                                                        	<option value="Namibia">Namibia</option>
+                                                        	                                                        	<option value="New Caledonia">New Caledonia</option>
+                                                        	                                                        	<option value="Niger">Niger</option>
+                                                        	                                                        	<option value="Nigeria">Nigeria</option>
+                                                        	                                                        	<option value="Nicaragua">Nicaragua</option>
+                                                        	                                                        	<option value="Netherlands">Netherlands</option>
+                                                        	                                                        	<option value="Norway">Norway</option>
+                                                        	                                                        	<option value="Nepal">Nepal</option>
+                                                        	                                                        	<option value="Nauru">Nauru</option>
+                                                        	                                                        	<option value="New Zealand">New Zealand</option>
+                                                        	                                                        	<option value="Oman">Oman</option>
+                                                        	                                                        	<option value="Panama">Panama</option>
+                                                        	                                                        	<option value="Peru">Peru</option>
+                                                        	                                                        	<option value="French Polynesia">French Polynesia</option>
+                                                        	                                                        	<option value="Papua New Guinea">Papua New Guinea</option>
+                                                        	                                                        	<option value="Philippines">Philippines</option>
+                                                        	                                                        	<option value="Pakistan">Pakistan</option>
+                                                        	                                                        	<option value="Poland">Poland</option>
+                                                        	                                                        	<option value="Saint Pierre And Miquelon">Saint Pierre And Miquelon</option>
+                                                        	                                                        	<option value="Puerto Rico">Puerto Rico</option>
+                                                        	                                                        	<option value="Palestinian Territory">Palestinian Territory</option>
+                                                        	                                                        	<option value="Portugal">Portugal</option>
+                                                        	                                                        	<option value="Palau">Palau</option>
+                                                        	                                                        	<option value="Paraguay">Paraguay</option>
+                                                        	                                                        	<option value="Qatar">Qatar</option>
+                                                        	                                                        	<option value="Reunion">Reunion</option>
+                                                        	                                                        	<option value="Romania">Romania</option>
+                                                        	                                                        	<option value="Serbia">Serbia</option>
+                                                        	                                                        	<option value="Russia">Russia</option>
+                                                        	                                                        	<option value="Rwanda">Rwanda</option>
+                                                        	                                                        	<option value="Saudi Arabia">Saudi Arabia</option>
+                                                        	                                                        	<option value="Solomon Islands">Solomon Islands</option>
+                                                        	                                                        	<option value="Seychelles">Seychelles</option>
+                                                        	                                                        	<option value="Sudan">Sudan</option>
+                                                        	                                                        	<option value="Sweden">Sweden</option>
+                                                        	                                                        	<option value="Singapore">Singapore</option>
+                                                        	                                                        	<option value="Saint Helena">Saint Helena</option>
+                                                        	                                                        	<option value="Slovenia">Slovenia</option>
+                                                        	                                                        	<option value="Svalbard And Jan Mayen">Svalbard And Jan Mayen</option>
+                                                        	                                                        	<option value="Slovakia">Slovakia</option>
+                                                        	                                                        	<option value="Sierra Leone">Sierra Leone</option>
+                                                        	                                                        	<option value="San Marino">San Marino</option>
+                                                        	                                                        	<option value="Senegal">Senegal</option>
+                                                        	                                                        	<option value="Somalia">Somalia</option>
+                                                        	                                                        	<option value="Suriname">Suriname</option>
+                                                        	                                                        	<option value="South Sudan">South Sudan</option>
+                                                        	                                                        	<option value="Sao Tome And Principe">Sao Tome And Principe</option>
+                                                        	                                                        	<option value="El Salvador">El Salvador</option>
+                                                        	                                                        	<option value="Syria">Syria</option>
+                                                        	                                                        	<option value="Swaziland">Swaziland</option>
+                                                        	                                                        	<option value="Chad">Chad</option>
+                                                        	                                                        	<option value="French Southern Territories">French Southern Territories</option>
+                                                        	                                                        	<option value="Togo">Togo</option>
+                                                        	                                                        	<option value="Thailand">Thailand</option>
+                                                        	                                                        	<option value="Tajikistan">Tajikistan</option>
+                                                        	                                                        	<option value="Tokelau">Tokelau</option>
+                                                        	                                                        	<option value="East Timor">East Timor</option>
+                                                        	                                                        	<option value="Turkmenistan">Turkmenistan</option>
+                                                        	                                                        	<option value="Tunisia">Tunisia</option>
+                                                        	                                                        	<option value="Tonga">Tonga</option>
+                                                        	                                                        	<option value="Turkey">Turkey</option>
+                                                        	                                                        	<option value="Trinidad And Tobago">Trinidad And Tobago</option>
+                                                        	                                                        	<option value="Tuvalu">Tuvalu</option>
+                                                        	                                                        	<option value="Taiwan">Taiwan</option>
+                                                        	                                                        	<option value="Tanzania">Tanzania</option>
+                                                        	                                                        	<option value="Ukraine">Ukraine</option>
+                                                        	                                                        	<option value="Uganda">Uganda</option>
+                                                        	                                                        	<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                                        	                                                        	<option value="United States">United States</option>
+                                                        	                                                        	<option value="Uruguay">Uruguay</option>
+                                                        	                                                        	<option value="Uzbekistan">Uzbekistan</option>
+                                                        	                                                        	<option value="Saint Vincent And The Grenadines">Saint Vincent And The Grenadines</option>
+                                                        	                                                        	<option value="Venezuela">Venezuela</option>
+                                                        	                                                        	<option value="U.S. Virgin Islands">U.S. Virgin Islands</option>
+                                                        	                                                        	<option value="Vietnam">Vietnam</option>
+                                                        	                                                        	<option value="Vanuatu">Vanuatu</option>
+                                                        	                                                        	<option value="Wallis And Futuna">Wallis And Futuna</option>
+                                                        	                                                        	<option value="Samoa">Samoa</option>
+                                                        	                                                        	<option value="Kosovo">Kosovo</option>
+                                                        	                                                        	<option value="Yemen">Yemen</option>
+                                                        	                                                        	<option value="Mayotte">Mayotte</option>
+                                                        	                                                        	<option value="South Africa">South Africa</option>
+                                                        	                                                        	<option value="Zambia">Zambia</option>
+                                                        	                                                        	<option value="Zimbabwe">Zimbabwe</option>
+                                                        	                                                        </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-xxl-6 col-lg-6">
+                                                    	Success Story <span class="text-danger gtRegMandatory">*</span>
+                                                	</label>
+                                                        <div class="col-xxl-10 col-lg-10">
+                                                            <textarea Class="gt-form-control" name="succstory" id="succstory" rows="5" data-validetta="required" placeholder="Enter Your Success Story Here"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <div class="row">
+                                                        <input type="submit" class="btn gt-btn-orange gt-btn-xl" value="Submit" name="sub_success">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="col-xxl-10 col-xxl-offset-3 col-xl-12 col-xl-offset-2">
+                                            <div class="col-xxl-16 col-xs-16 text-center">
+                                                <h4>Which topics you can write as your success story</h4>
+                                            </div>
+                                            <div class="col-xxl-8 col-xl-8 col-xs-16">
+                                                <h6 class="text-muted">
+                                                    - How you create your id and how you became our user.
+                                                </h6>
+                                                <h6 class="text-muted">
+                                                    - How you you contact your partner
+                                                </h6>
+                                            </div>
+                                            <div class="col-xxl-8 col-xl-8 col-xs-16">
+                                                <h6 class="text-muted">
+                                                    - how you think that your perfect and process further.
+                                                </h6>
+                                                <h6 class="text-muted">
+                                                    - what do you think about our website and experience.
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--- POST SUCCESS STORY END ---->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container gt-margin-top-10">
+        </div>
+
+        <!--- FOOTER --->
+        <footer class="footer-before-login gt-margin-top-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-16 col-md-8">
+                        <h5 class="gt-text-green">
+                            Help And Support
+                        </h5>
+                        <ul class="">
+                            <li><a href="/contactUs">Contact Us</a></li>
+                            <li><a href="cms?cms_id=13">FAQ</a></li>
+                            <li><a href="cms?cms_id=16">Refund policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-16 col-md-8">
+                        <h5 class="gt-text-green">
+                            Terms & Policy
+                        </h5>
+                        <ul class="">
+                            <li><a href="cms?cms_id=7">Terms & Condition</a></li>
+                            <li><a href="cms?cms_id=6">Privacy Policy</a></li>
+                            <li><a href="cms?cms_id=15">Report Misuse</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-16 col-md-8">
+                        <h5 class="gt-text-green">
+                            Need Help?
+                        </h5>
+                        <ul class="">
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/index">Register</a></li>
+                            <li><a href="/membershipplans"><i class="fa fa-star gt-text-orange"></i> Upgrade Membership</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-16 col-md-8">
+                        <h5 class="gt-text-green">
+                            Information
+                        </h5>
+                        <ul class="">
+                            <li><a href="/success-story">Success Story</a></li>
+                            <li><a href="cms?cms_id=8">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-16">
+                        <h5 class="gt-text-green">About Us</h5>
+                        <p>Welcome to Vivah</p>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-16 text-center">
+                        <h5 class="gt-text-green">
+                            Join us on social
+                        </h5>
+                        <ul class="gt-footer-social">
+                            <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                            <li><a href="https://www.googleplus.com" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
+                            <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+                            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="container-fluid gt-footer-bottom">
+            <div class="row">
+                <div class="container text-center">
+                    All Rights Reserved By @ <a href="http://matrimonialphpscript.com/premium-demo/">Design and developed by   ScncSoft</a>
+                </div>
+            </div>
+        </div>
+        <!--- FOOTER END--->
+
+        <!--
+<script>
+ document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 67 || 
+             e.keyCode === 86 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
+            return false;
+        } else {
+            return true;
+        }
+};
+</script>
+<script language=JavaScript>
+var message="Function Disabled!";
+function clickIE4(){
+if (event.button==2){
+return false;
+}
+}
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+return false;
+}
+}
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+document.oncontextmenu=new Function("return false")
+</script>
+-->
+
+        <!---- ONLINE CHAT WIDGET--->
+        <script type="text/javascript">
+            var auto_refresh = setInterval(
+                function() {
+                    $('#count').load('parts/online').fadeIn("slow");
+                }, 15000); // refresh every 10 second
+        </script>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <small class="pull-right">
+  </small>
+        <!---- ONLINE CHAT WIDGET END--->
+
+
+        <a href="/feedback" style="position: absolute;left: 0;top: 30%;z-index: 1;">
+ <img src="{% static 'img/feedback.png' %}" style="height:100px;width:30px;position:fixed;top:200;left:0">
+</a>
+
+
+        <script>
+            $(function() {
+                $('#thanksMessage').on('show.bs.modal', function() {
+                    var myModal = $(this);
+                    clearTimeout(myModal.data('hideInterval'));
+                    myModal.data('hideInterval', setTimeout(function() {
+                        myModal.modal('hide');
+                    }, 2000));
+                });
+            });
+        </script>
+        <!--- FEEDBACK MODAL END --->
+
+        <!--- GOOGLE ANALYTICS CODE --->
+        <script>
+            var id = 'UA-demo1';
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', id, 'auto');
+            ga('send', 'pageview');
+        </script>
+        <!--- GOOGLE ANALYTICS CODE END --->
+
+
+    </div>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <!-- JQUERY --->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!--- JQUERY END --->
+
+        <!--- BOOTSTRAP AND GREEN JS--->
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/jquery.validate.js' %}"></script>
+        <script src="{% static 'js/green.js' %}"></script>
+        <!--- BOOTSTRAP AND GREEN JS END--->
+
+        <!--- CHECK BRIDE AND GROOM --->
+        <script type="text/javascript">
+            function chackbride(id) {
+                var dataString = "id=" + id;
+                $.ajax({
+                    type: "POST",
+                    url: "web-services/checkbride",
+                    data: dataString,
+                    cache: false,
+                    success: function(html) {
+                        $("#bridename").val(html);
+                    }
+                });
+            }
+
+            function chackgroom(id) {
+                var dataString = "id=" + id;
+                $.ajax({
+                    type: "POST",
+                    url: "web-services/checkgroom",
+                    data: dataString,
+                    cache: false,
+                    success: function(html) {
+                        $("#groomname").val(html);
+                    }
+                });
+            }
+        </script>
+        <!--- CHECK BRIDE AND GROOM END--->
+
+        <!--- LOADER JS--->
+        <script>
+            $(document).ready(function() {
+                $('#body').show();
+                $('.preloader-wrapper').hide();
+            });
+        </script>
+        <!--- LOADER JS END --->
+
+        <!--- VALIDATION JS --->
+        <script type="text/javascript" src="{% static 'js/validetta.js' %}"></script>
+        <!--- VALIDATION JS END--->
+
+        <!----- AJAX FOR PAGINATION ---->
+        <script type="text/javascript">
+            $(function() {
+                $('#suc-form').validetta({
+                    errorClose: false,
+                    realTime: true
+                });
+            });
+            $.post("web-services/success_story_pagination", {
+                    actionfunction: 'showData',
+                    page: '1'
+                },
+                function(response) {
+                    $('#suc_story').html(response);
+                }
+            );
+            $('#suc_story').on('click', '.page-numbers', function() {
+                $page = $(this).attr('href')
+                $pageind = $page.indexOf('page=');
+                $page = $page.substring(($pageind + 5));
+                var dataString = 'actionfunction=showData' + '&page=' + $page;
+                $.ajax({
+                    url: "web-services/success_story_pagination",
+                    type: "POST",
+                    data: dataString,
+                    cache: false,
+                    success: function(response) {
+                        $('#suc_story').html(response);
+                    }
+                });
+                return false;
+            });
+        </script>
+        <!----- AJAX FOR PAGINATION END---->
+
+</body>
+
+</html>
+<script>
+    $(document).ready(function() {
+        dis_thumbnail();
+    });
+
+    function dis_thumbnail() {
+        var dataString = '';
+        jQuery.ajax({
+            url: "./web-services/display_thumbnail",
+            type: "POST",
+            data: dataString,
+            cache: false,
+            success: function(response) {
+                $("#dis_thumbnail").html('');
+                $("#dis_thumbnail").append(response);
+            },
+        });
+    }
+</script>

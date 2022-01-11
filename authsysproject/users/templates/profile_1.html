@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+        <!-- To decrese notification count when click on notification-->
+                <script>
+                    function notification(noti_id) {
+                        $.ajax({
+                            url: "web-services/notification",
+                            type: "POST",
+                            data: "noti_id=" + noti_id,
+                            cache: false,
+                            success: function(response) {
+                                location.reload();
+
+                            }
+                        });
+                        return true;
+                    }
+                </script>
+                <!-- HEADER END-->
+
+
+
+    <body oncontextmenu='return false' class='snippet'>
+    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+<!--        <div class="col-md-3 border-right">-->
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3"><t>
+                    <h3 class="text-center">Personal details</h3>
+                    <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Marital status</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Height</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Family status</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Family type</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Any physically disabilities</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    </div>
+                </div>
+            </div>
+<!--        </div>-->
+<!--        <div class="col-md-5 border-right">-->
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="text-center">Professional details</h3>
+                </div>
+
+<!--                <div class="row mt-2">-->
+<!--                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>-->
+<!--                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>-->
+<!--                </div>-->
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Highest education</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Employed In</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Occupation</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Work location</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-12"><label class="labels">Annual income</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                </div>
+<!--                <div class="row mt-3">-->
+<!--                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>-->
+<!--                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>-->
+<!--                </div>-->
+            </div>
+<!--        </div>-->
+<!--        <div class="col-md-4">-->
+            <div class="p-3 py-5">
+
+                <div class="text-center"><span><h3>Basic details</h3></span></div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Body Type</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                    <div class="col-md-6"><label class="labels">Weight</label><input type="text" class="form-control" value="" placeholder="Enter"></div>
+                </div>
+                <div class="col-md-12"><label class="labels">Lifestyle information</label><input type="text" class="form-control" placeholder="<-- Select -->" value=""></div>
+                <div class="col-md-12"><label class="labels">Horoscope details</label><input type="text" class="form-control" placeholder="Select Caste" value=""></div>
+                <div class="col-md-12"><label class="labels">Family information</label><input type="text" class="form-control" placeholder="Select option" value=""></div>
+                <div class="col-md-12"><label class="labels">Parent's contact details</label><input type="text" class="form-control" placeholder="Select options" value=""></div>
+            </div>
+<!--        </div>-->
+    </div>
+</div>
+</div>
+                           <br> <div class="mt-5 text-center"><button class="btn gt-btn-orange btn-primary profile-button" type="button">Save Profile</button></div>
+
+</div>
+
+
+    <script type="text/javascript">
+            var auto_refresh = setInterval(
+                function() {
+                    $('#count').load('parts/online').fadeIn("slow");
+                }, 15000); // refresh every 10 second
+        </script>
+        <script src="/static/js/jquery.min.js"></script>
+        <small class="pull-right">
+  </small>
+        <!---- ONLINE CHAT WIDGET END--->
+
+
+        <a href="/feedback" style="position: absolute;left: 0;top: 30%;z-index: 1;">
+ <img src="/static/img/feedback.png" style="height:100px;width:30px;position:fixed;top:200;left:0">
+</a>
+
+
+        <script>
+            $(function() {
+                $('#thanksMessage').on('show.bs.modal', function() {
+                    var myModal = $(this);
+                    clearTimeout(myModal.data('hideInterval'));
+                    myModal.data('hideInterval', setTimeout(function() {
+                        myModal.modal('hide');
+                    }, 2000));
+                });
+            });
+        </script>
+        <!--- FEEDBACK MODAL END --->
+
+        <!--- GOOGLE ANALYTICS CODE --->
+        <script>
+            var id = 'UA-demo1';
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', id, 'auto');
+            ga('send', 'pageview');
+        </script>
+        <!--- GOOGLE ANALYTICS CODE END --->
+
+
+    </div>
+
+    <!-- Jquery --->
+    <script src="/static/js/jquery.min.js"></script>
+    <!--- Jquery END --->
+    <!--- BOOTSTRAP AND GREEN JS--->
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/jquery.validate.js"></script>
+    <script src="/static/js/green.js"></script>
+    <!--- BOOTSTRAP AND GREEN JS END--->
+    <!--- LOADER JS--->
+    <script>
+        $(document).ready(function() {
+            $('#body').show();
+            $('.preloader-wrapper').hide();
+        });
+    </script>
+    <!--- LOADER JS END --->
+    <!---- VALIDATION JS --->
+    <script type="text/javascript" src="/static/js/validetta.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#login_form').validetta({
+                errorClose: false,
+                custom: {
+                    regname: {
+                        pattern: /^[\+][0-9]+?$|^[0-9]+?$/,
+                        errorMessage: 'Custom Reg Error Message !'
+                    },
+                    example: {
+                        pattern: /^[\+][0-9]+?$|^[0-9]+?$/,
+                        errorMessage: 'Lan mal !'
+                    }
+                },
+                realTime: true
+            });
+        });
+    </script>
+    <!---- VALIDATION JS END --->
+</body>
+
+</html>
+<script>
+    $(document).ready(function() {
+        dis_thumbnail();
+    });
+
+    function dis_thumbnail() {
+        var dataString = '';
+        jQuery.ajax({
+            url: "./web-services/display_thumbnail",
+            type: "POST",
+            data: dataString,
+            cache: false,
+            success: function(response) {
+                $("#dis_thumbnail").html('');
+                $("#dis_thumbnail").append(response);
+            },
+        });
+    }
+</script>
+{% endblock %}

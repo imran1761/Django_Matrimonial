@@ -1,0 +1,248 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+    <meta name="theme-color" content="#549a11">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#549a11">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#549a11">
+    <!-- WEB SITE TITLE DESCRIPTION-->
+    <title> Vivah</title>
+    <meta name="keyword" content="Welcome to Inlogix Infoway" />
+    <meta name="description" content="Welcome to Inlogix Infoway" />
+    <!-- WEB SITE TITLE DESCRIPTION END-->
+
+    <!-- WEB SITE FAVICON-->
+    <link type="image/x-icon" href="{% static 'img/favicon-96x96.png' %}" rel="shortcut icon" />
+    <!-- WEB SITE FAVICON END-->
+
+    <!--CUSTOM CSS FRAMEWORK FROM THE GREEN TECHNOLOGIES WITH BOOTSTRAP-->
+
+
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom-responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <!--CUSTOM CSS FRAMEWORK FROM THE GREEN TECHNOLOGIES WITH BOOTSTRAP END-->
+
+    <!--CUSTOM FONT ICON FROM THE GREEN TECHNOLOGIES & FONT AWESOME -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://greenicon.thegreentech.in/green-font-icons/green-font-icons.min.css" rel="stylesheet">
+    <!--CUSTOM FONT ICON FROM THE GREEN TECHNOLOGIES & FONT AWESOME END -->
+
+    <!--GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!--GOOGLE FONTS END-->
+
+    <!--OWL CAROUSEL CSS-->
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <!--OWL CAROUSEL CSS END-->
+
+    <!-- CHOSEN CSS -->
+    <link rel="stylesheet" href="{% static 'css/prism.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chosen.css' %}">
+    <!-- CHOSEN CSS END -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="{% static 'js/html5shiv.min.js' %}"></script>
+          <script src="{% static 'js/respond.min.js' %}"></script>
+        <![endif]-->
+    <!-- ANGULAR JS-->
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <!-- ANGULAR JS END-->
+
+    <!--BIRTHDATE JS-->
+    <script type="text/javascript">
+        var numDays = {
+            '01': 31,
+            '02': 28,
+            '03': 31,
+            '04': 30,
+            '05': 31,
+            '06': 30,
+            '07': 31,
+            '08': 31,
+            '09': 30,
+            '10': 31,
+            '11': 30,
+            '12': 31
+        };
+
+        function setDays(oMonthSel, oDaysSel, oYearSel) {
+            var nDays, oDaysSelLgth, opt, i = 1;
+            nDays = numDays[oMonthSel[oMonthSel.selectedIndex].value];
+            if (nDays == 28 && oYearSel[oYearSel.selectedIndex].value % 4 == 0)
+                ++nDays;
+            oDaysSelLgth = oDaysSel.length;
+            if (nDays != oDaysSelLgth) {
+                if (nDays < oDaysSelLgth)
+                    oDaysSel.length = nDays;
+                else
+                    for (i; i < nDays - oDaysSelLgth + 1; i++) {
+                        opt = new Option(oDaysSelLgth + i, oDaysSelLgth + i);
+                        oDaysSel.options[oDaysSel.length] = opt;
+                    }
+            }
+            var oForm = oMonthSel.form;
+            var month = oMonthSel.options[oMonthSel.selectedIndex].value;
+            var day = oDaysSel.options[oDaysSel.selectedIndex].value;
+            var year = oYearSel.options[oYearSel.selectedIndex].value;
+        }
+    </script>
+    <!--BIRTHDATE JS END-->
+</head>
+
+<body ng-app class="ng-scope">
+
+    <!-- ICON LOADER-->
+    <div class="preloader-wrapper text-center">
+        <div class="loader"></div>
+        <h5>Loading...</h5>
+    </div>
+    <!-- ICON LOADER END-->
+
+    <div id="body" style="display:none">
+        <div id="wrap">
+            <div id="main">
+                <!-- SMS Sending And Account Verification -->
+                <!-- SMS Sending And Account Verification End -->
+                <!-- HEADER -->
+<!--                <div class="container-fluid inHeaderAdminLink">-->
+<!--                    <div class="row">-->
+<!--                        <div class="container">-->
+<!--                            <div class="col-xxl-16 text-center">-->
+<!--                                <a href="admin/index.html">Admin Login</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <header class="container gtHeaderForm">
+                    <div class="row">
+
+                        <!-- LOGO -->
+                        <div class="col-xxl-5 col-xl-4 col-xs-8 col-md-8 col-lg-5">
+                            <a href="index" class="ripplelink">
+                    <img src="{% static 'img/logo.png' %}" class="img-responsive gt-header-logo">
+                </a>
+                        </div>
+                        <!-- LOGO END -->
+                        <!-- HEADER LOGIN FORM STARTS HERE -->
+<!--                        <div class="col-xxl-8 col-xl-10 col-lg-11 col-xs-16 col-sm-16 col-md-16 pull-right gt-margin-top-20 hidden-xs hidden-sm hidden-md">-->
+<!--                            <div class="row">-->
+<!--                                <form action="login" method="post" id="headerloginForm">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope fa-fw"></i></span>-->
+<!--                                            <input type="text" class="gt-form-control" name="username" id="username" placeholder="Enter your login id" aria-describedby="basic-addon1" required>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <span class="input-group-addon" id="basic-addon2"><i class="fa fa-unlock-alt fa-fw"></i></span>-->
+<!--                                            <input type="password" class="gt-form-control" placeholder="Enter your password" name="password" id="password" aria-describedby="basic-addon2" required>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xxl-4 col-xl-4 col-lg-4 form-group gt-margin-bottom-10">-->
+<!--                                        <input type="submit" class="btn gt-btn-orange btn-block gt-btn-lg" name="member_login" value="LOGIN">-->
+<!--                                    </div>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-xxl-5 pull-right text-right">-->
+<!--                                    <a href="forgot-password-password" class="gt-text-Grey">Need Help To login ?</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- HEADER LOGIN FORM END HERE -->
+
+                        <!-- HEADER LOGIN MOBILE-->
+                        <div class="col-xs-8 visible-xs visible-sm visible-md text-right">
+                            <a class="btn gt-btn-orange gt-margin-top-15" role="button" data-toggle="collapse" href="#collapseHeadLogin" aria-expanded="false" aria-controls="collapseHeadLogin">
+ 					Login
+				</a>
+                        </div>
+                        <!-- HEADER LOGIN MOBILE END-->
+                    </div>
+                    <div class="container gt-margin-top-15">
+                        <div class="row ">
+                            <div class="collapse" id="collapseHeadLogin">
+                                <div class="row">
+                                    <form action="login" method="post" id="headerloginForm">
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope fa-fw"></i></span>
+                                                <input type="text" class="gt-form-control" name="username" id="username" placeholder="Enter your login id" aria-describedby="basic-addon1" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 form-group gt-margin-bottom-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon2"><i class="fa fa-unlock-alt fa-fw"></i></span>
+                                                <input type="password" class="gt-form-control" placeholder="Enter your password" name="password" id="password" aria-describedby="basic-addon2" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-4 col-xl-4 col-lg-4 form-group gt-margin-bottom-10">
+                                            <input type="submit" class="btn gt-btn-orange btn-block gt-btn-lg" name="member_login" value="LOGIN">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl-5 pull-right text-right">
+                                        <a href="forgot-password-password" class="gt-text-Grey">Need Help To login ?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <nav class="navbar gt-navbar-green flat gt-margin-bottom-0">
+                    <div class="container">
+
+                        <!-- MOBILE MENU BUTTON -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:rgba(247,247,247,1.00);color:rgba(0,0,0,1.00) !important;">
+                    <span>MENU</span>
+                </button>
+                        </div>
+                        <!-- MOBILE MENU BUTTON END-->
+
+                        <!-- MENU ITEMS-->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li class="active ripplelink"><a href="/index"><i class="fa fa-home gt-margin-right-10 fa-lg"></i>HOME</a></li>
+                                <li class="dropdown">
+                                    <a href="search.html" class="dropdown-toggle ripplelink" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="gt-margin-right-5"><i class="fa fa-search gt-margin-right-10 fa-lg"></i>SEARCH</span><span class="fa fa-angle-down"></span>
+                        </a>
+                                    <ul class="dropdown-menu flat" role="menu">
+                                        <li><a href="search?gt-quick-search">Quick Search</a></li>
+                                        <li><a href="search?gt-basic-search">Basic Search</a></li>
+                                        <li><a href="search?gt-advance-search">Advanced Search</a></li>
+                                        <li><a href="search?gt-keyword-search">Keyword Search</a></li>
+                                        <li><a href="search?gt-location-search">Location Search</a></li>
+                                        <li><a href="search?gt-occupation-search">Occupation Search</a></li>
+                                    </ul>
+                                </li>
+                                <li class="ripplelink"><a href="/success-story"><i class="fa fa-users gt-margin-right-10 fa-lg"></i>SUCCESS STORY</a></li>
+                                <li class="ripplelink"><a href="/membershipplans"><i class="fa fa-star gt-margin-right-10 fa-lg"></i>MEMBERSHIP</a></li>
+                                <li class="ripplelink"><a href="/contactUs"><i class="fa fa-phone-square gt-margin-right-10 fa-lg"></i>CONTACT US</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active ripplelink gt-border-right-green gt-border-left-green gtBorderRightSMXS0 gtBorderLeftSMXS0">
+                                    <a href="/login"><i class="fa fa-sign-in gt-margin-right-10 fa-lg"></i>LOGIN</a>
+                                </li>
+                                <li class="ripplelink gt-border-right-green gtBorderRightSMXS0">
+                                    <a href="/index"><i class="fa fa-pencil-square gt-margin-right-10 fa-lg"></i>SIGN UP</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- MENU ITEMS END -->
+
+                    </div>
+                </nav>

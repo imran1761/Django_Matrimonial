@@ -1,0 +1,843 @@
+<script type="text/javascript">
+    function save_search() {
+        $('#txt_saved_search_name').val('');
+        $("#div_saved_search").show();
+        $("#div_success").hide();
+    }
+    $(document).ready(function(e) {
+        $('#sub_saved_search').click(function() {
+            if ($('#txt_saved_search_name').val() == '') {
+                alert('Please fill up the saved search name.');
+                return false;
+            } else {
+                var txt_saved_search_nm = $('#txt_saved_search_name').val();
+                $.ajax({
+                    type: "POST",
+                    url: "saved_search_query",
+                    data: 'saved_nm=' + txt_saved_search_nm,
+                    success: function(data) {
+                        $("#div_saved_search").hide();
+                        $('#sub_saved_search').hide();
+                        $("#div_success").show();
+                        $("#div_success").html(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
+<div class="alert alert-warning" role="alert">
+    <div class="row">
+        <div class="col-xxl-16 col-xs-16">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;
+        </span>
+      </button>
+        </div>
+        <div class="col-xxl-16 col-xs-16">
+            <h4 class="">
+                <i class="fa fa-star gt-text-blue gt-margin-right-10">
+        </i>Spotlight Profile
+            </h4>
+            <p>
+                Blue Header profile is are spotlight profile which was showing top of the search result.Its gives 10 times faster results.
+            </p>
+            <p>
+                <span style="color:red;">
+          <b>
+            5          </b>
+        </span> Profiles found :
+                <span class="text-muted gt-margin-left-10">
+           
+                            </span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="col-xs-16 text-right">
+    <div class="buttons">
+        <button class="grid btn gt-btn-green">
+      <i class="fa fa-list gt-margin-right-5">
+      </i>Grid View
+    </button>
+        <button class="list btn gt-btn-green">
+      <i class="fa fa-th gt-margin-right-5">
+      </i>List View
+    </button>
+    </div>
+</div>
+<div class="clearfix">
+    <script>
+        $('button').on('click', function(e) {
+            if ($(this).hasClass('grid')) {
+                $('#result ul').removeClass('list').addClass('grid');
+            } else if ($(this).hasClass('list')) {
+                $('#result ul').removeClass('grid').addClass('list');
+            }
+        });
+    </script>
+    <li class="gt-panel gt-panel-default gt-panel-default gt-main-profile">
+        <a href="member-profile?view_id=IN1" target="_blank" class="gt-panel-head">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 text-center gridFullWidth gt-main-name">
+
+                    <h4 class="gt-margin-top-0 gt-margin-bottom-0">
+                        Sajana 5 ( IN1 )
+                    </h4>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        Register On: 20 Feb 2020 ,10:25 AM </h5>
+                </div>
+                <div class="col-xxl-5 col-xxl-5 col-lg-5 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        <!--<i class="fa fa-circle gt-text-green gt-margin-right-10"></i>Online-->
+                        Online </h5>
+                </div>
+            </div>
+        </a>
+        <a href="member-profile?view_id=IN1" target="_blank" class="gt-result-panel-body">
+            <div class="row gt-padding-bottom-15">
+                <div class="col-xxl-2 col-xl-2 col-xs-16 col-lg-3 gridFullWidth">
+                    <div class="thumbnail gt-margin-bottom-0">
+                        <img src="img/female-pending-approval.png" class="img-responsive gtFullWidth">
+
+
+                    </div>
+                </div>
+                <div class="col-xxl-14 col-xl-14 col-xs-16 col-lg-13 gt-margin-top-10 gridFullWidth">
+                    <div class="row">
+                        <div class="redirect">
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Age :
+                </label>
+                                    <span class="col-xs-9">
+                  2020 years 8 months  											
+                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Height :
+                </label>
+                                    <span class="col-xs-9">
+                  0ft 0in                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden ">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Religion :
+                </label>
+                                    <span class="col-xs-9">
+                  Hindu                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Caste :
+                </label>
+                                    <span class="col-xs-9">
+                  Vannia Kula Kshatriyar                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0 ">
+                                    <label class="col-xs-7 gridHidden">Location :
+                </label>
+                                    <span class="col-xs-9 gridFullWidth">
+                  Along, India                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Education :
+                </label>
+                                    <span class="col-xs-9">
+                   B Tech                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Mother Tongue :
+                </label>
+                                    <span class="col-xs-9">
+                   Angika                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Occupation :
+                </label>
+                                    <span class="col-xs-9">
+                  Engineer                </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--<div class="col-xxl-16 col-xl-16 col-xs-16 gridHidden">
+<p class="row gt-margin-bottom-0">
+<label class="col-xs-16 col-xxl-3 col-xl-3 col-lg-16">About Me :</label>
+<span class="col-xs-16 col-xxl-13 col-xl-13 col-lg-16">
+<span class="col-xs-16 gt-profile-me">
+Shangavi...
+Read More <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>
+</span>
+</span>
+</p>
+</div>-->
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="gt-result-panel-footer">
+            <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 gt-margin-top-10 gridHidden">
+                    <a href="login" class="btn btn-default btn-block btn-xl">
+          <i class="fa fa-envelope">
+          </i> Send Message
+        </a>
+                </div>
+                <div class="col-xxl-11 col-xl-11 col-lg-11 pull-right gridFullWidth">
+                    <div class="row">
+                        <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 gt-margin-top-10 gridFullWidth">
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN1" title="Add to Blocklist">
+            <i class="fa fa-ban gt-margin-right-5">
+            </i>Add to Blocklist
+            </a>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN1" title="Add to Shortlist">
+        <i class="fa fa-sort gt-margin-right-5">
+        </i>Add to Shortlist
+        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="gt-panel gt-panel-default gt-panel-default gt-main-profile">
+        <a href="member-profile?view_id=IN26" target="_blank" class="gt-panel-head">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 text-center gridFullWidth gt-main-name">
+
+                    <h4 class="gt-margin-top-0 gt-margin-bottom-0">
+                        Retgreg F ( IN26 )
+                    </h4>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        Register On: 26 Nov 2021 ,05:27 AM </h5>
+                </div>
+                <div class="col-xxl-5 col-xxl-5 col-lg-5 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        <!--<i class="fa fa-circle gt-text-green gt-margin-right-10"></i>Online-->
+                        Online </h5>
+                </div>
+            </div>
+        </a>
+        <a href="member-profile?view_id=IN26" target="_blank" class="gt-result-panel-body">
+            <div class="row gt-padding-bottom-15">
+                <div class="col-xxl-2 col-xl-2 col-xs-16 col-lg-3 gridFullWidth">
+                    <div class="thumbnail gt-margin-bottom-0">
+
+                        <img src="./img/female.png" title="Retgreg Fdgfdg" alt="IN26" class="img-responsive gtFullWidth">
+
+
+                    </div>
+                </div>
+                <div class="col-xxl-14 col-xl-14 col-xs-16 col-lg-13 gt-margin-top-10 gridFullWidth">
+                    <div class="row">
+                        <div class="redirect">
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Age :
+                </label>
+                                    <span class="col-xs-9">
+                  31 years 11 months  											
+                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Height :
+                </label>
+                                    <span class="col-xs-9">
+                  5ft 9in                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden ">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Religion :
+                </label>
+                                    <span class="col-xs-9">
+                  Buddhist                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Caste :
+                </label>
+                                    <span class="col-xs-9">
+                  Other Caste                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0 ">
+                                    <label class="col-xs-7 gridHidden">Location :
+                </label>
+                                    <span class="col-xs-9 gridFullWidth">
+                  Achanakmar, India                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Education :
+                </label>
+                                    <span class="col-xs-9">
+                   B Plan,  BGL                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Mother Tongue :
+                </label>
+                                    <span class="col-xs-9">
+                   Awadhi                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Occupation :
+                </label>
+                                    <span class="col-xs-9">
+                  Consultant                </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--<div class="col-xxl-16 col-xl-16 col-xs-16 gridHidden">
+<p class="row gt-margin-bottom-0">
+<label class="col-xs-16 col-xxl-3 col-xl-3 col-lg-16">About Me :</label>
+<span class="col-xs-16 col-xxl-13 col-xl-13 col-lg-16">
+<span class="col-xs-16 gt-profile-me">
+dfddfsdf sfsdf dfdf  gfdg dfdf dfdf sdfd df fd dfdf ff fdd d sd sds dsd ...
+Read More <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>
+</span>
+</span>
+</p>
+</div>-->
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="gt-result-panel-footer">
+            <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 gt-margin-top-10 gridHidden">
+                    <a href="login" class="btn btn-default btn-block btn-xl">
+          <i class="fa fa-envelope">
+          </i> Send Message
+        </a>
+                </div>
+                <div class="col-xxl-11 col-xl-11 col-lg-11 pull-right gridFullWidth">
+                    <div class="row">
+                        <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 gt-margin-top-10 gridFullWidth">
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN26" title="Add to Blocklist">
+            <i class="fa fa-ban gt-margin-right-5">
+            </i>Add to Blocklist
+            </a>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN26" title="Add to Shortlist">
+        <i class="fa fa-sort gt-margin-right-5">
+        </i>Add to Shortlist
+        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="gt-panel gt-panel-default gt-panel-default gt-main-profile">
+        <a href="member-profile?view_id=IN29" target="_blank" class="gt-panel-head">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 text-center gridFullWidth gt-main-name">
+
+                    <h4 class="gt-margin-top-0 gt-margin-bottom-0">
+                        Test T ( IN29 )
+                    </h4>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        Register On: 30 Nov -0001 ,00:00 AM </h5>
+                </div>
+                <div class="col-xxl-5 col-xxl-5 col-lg-5 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        <!--<i class="fa fa-circle gt-text-green gt-margin-right-10"></i>Online-->
+                        Online </h5>
+                </div>
+            </div>
+        </a>
+        <a href="member-profile?view_id=IN29" target="_blank" class="gt-result-panel-body">
+            <div class="row gt-padding-bottom-15">
+                <div class="col-xxl-2 col-xl-2 col-xs-16 col-lg-3 gridFullWidth">
+                    <div class="thumbnail gt-margin-bottom-0">
+
+                        <img src="./img/female.png" title="Test T" alt="IN29" class="img-responsive gtFullWidth">
+
+
+                    </div>
+                </div>
+                <div class="col-xxl-14 col-xl-14 col-xs-16 col-lg-13 gt-margin-top-10 gridFullWidth">
+                    <div class="row">
+                        <div class="redirect">
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Age :
+                </label>
+                                    <span class="col-xs-9">
+                  22 years 11 months  											
+                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Height :
+                </label>
+                                    <span class="col-xs-9">
+                  4ft 10in                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden ">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Religion :
+                </label>
+                                    <span class="col-xs-9">
+                  Buddhist                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Caste :
+                </label>
+                                    <span class="col-xs-9">
+                  Other Caste                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0 ">
+                                    <label class="col-xs-7 gridHidden">Location :
+                </label>
+                                    <span class="col-xs-9 gridFullWidth">
+                  Gogola, Afghanistan                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Education :
+                </label>
+                                    <span class="col-xs-9">
+                   B Arch,  B Tech                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Mother Tongue :
+                </label>
+                                    <span class="col-xs-9">
+                   Angika                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Occupation :
+                </label>
+                                    <span class="col-xs-9">
+                  Consultant                </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--<div class="col-xxl-16 col-xl-16 col-xs-16 gridHidden">
+<p class="row gt-margin-bottom-0">
+<label class="col-xs-16 col-xxl-3 col-xl-3 col-lg-16">About Me :</label>
+<span class="col-xs-16 col-xxl-13 col-xl-13 col-lg-16">
+<span class="col-xs-16 gt-profile-me">
+hhh...
+Read More <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>
+</span>
+</span>
+</p>
+</div>-->
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="gt-result-panel-footer">
+            <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 gt-margin-top-10 gridHidden">
+                    <a href="login" class="btn btn-default btn-block btn-xl">
+          <i class="fa fa-envelope">
+          </i> Send Message
+        </a>
+                </div>
+                <div class="col-xxl-11 col-xl-11 col-lg-11 pull-right gridFullWidth">
+                    <div class="row">
+                        <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 gt-margin-top-10 gridFullWidth">
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN29" title="Add to Blocklist">
+            <i class="fa fa-ban gt-margin-right-5">
+            </i>Add to Blocklist
+            </a>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN29" title="Add to Shortlist">
+        <i class="fa fa-sort gt-margin-right-5">
+        </i>Add to Shortlist
+        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="gt-panel gt-panel-default gt-panel-default gt-main-profile">
+        <a href="member-profile?view_id=IN32" target="_blank" class="gt-panel-head">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 text-center gridFullWidth gt-main-name">
+
+                    <h4 class="gt-margin-top-0 gt-margin-bottom-0">
+                        Srilekha B ( IN32 )
+                    </h4>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        Register On: 30 Nov -0001 ,00:00 AM </h5>
+                </div>
+                <div class="col-xxl-5 col-xxl-5 col-lg-5 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        <!--<i class="fa fa-circle gt-text-green gt-margin-right-10"></i>Online-->
+                        Online </h5>
+                </div>
+            </div>
+        </a>
+        <a href="member-profile?view_id=IN32" target="_blank" class="gt-result-panel-body">
+            <div class="row gt-padding-bottom-15">
+                <div class="col-xxl-2 col-xl-2 col-xs-16 col-lg-3 gridFullWidth">
+                    <div class="thumbnail gt-margin-bottom-0">
+
+                        <img src="./img/female.png" title="Srilekha  Bhat " alt="IN32" class="img-responsive gtFullWidth">
+
+
+                    </div>
+                </div>
+                <div class="col-xxl-14 col-xl-14 col-xs-16 col-lg-13 gt-margin-top-10 gridFullWidth">
+                    <div class="row">
+                        <div class="redirect">
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Age :
+                </label>
+                                    <span class="col-xs-9">
+                  22 years 5 months  											
+                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Height :
+                </label>
+                                    <span class="col-xs-9">
+                  5ft 3in                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden ">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Religion :
+                </label>
+                                    <span class="col-xs-9">
+                  Hindu                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Caste :
+                </label>
+                                    <span class="col-xs-9">
+                  Brahmin - Shivhalli                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0 ">
+                                    <label class="col-xs-7 gridHidden">Location :
+                </label>
+                                    <span class="col-xs-9 gridFullWidth">
+                  Udipi, India                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Education :
+                </label>
+                                    <span class="col-xs-9">
+                   B Com,  MBA                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Mother Tongue :
+                </label>
+                                    <span class="col-xs-9">
+                   Tulu                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Occupation :
+                </label>
+                                    <span class="col-xs-9">
+                  Student                </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--<div class="col-xxl-16 col-xl-16 col-xs-16 gridHidden">
+<p class="row gt-margin-bottom-0">
+<label class="col-xs-16 col-xxl-3 col-xl-3 col-lg-16">About Me :</label>
+<span class="col-xs-16 col-xxl-13 col-xl-13 col-lg-16">
+<span class="col-xs-16 gt-profile-me">
+I m very kind and friendly nature......
+Read More <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>
+</span>
+</span>
+</p>
+</div>-->
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="gt-result-panel-footer">
+            <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 gt-margin-top-10 gridHidden">
+                    <a href="login" class="btn btn-default btn-block btn-xl">
+          <i class="fa fa-envelope">
+          </i> Send Message
+        </a>
+                </div>
+                <div class="col-xxl-11 col-xl-11 col-lg-11 pull-right gridFullWidth">
+                    <div class="row">
+                        <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 gt-margin-top-10 gridFullWidth">
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN32" title="Add to Blocklist">
+            <i class="fa fa-ban gt-margin-right-5">
+            </i>Add to Blocklist
+            </a>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN32" title="Add to Shortlist">
+        <i class="fa fa-sort gt-margin-right-5">
+        </i>Add to Shortlist
+        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="gt-panel gt-panel-default gt-panel-default gt-main-profile">
+        <a href="member-profile?view_id=IN35" target="_blank" class="gt-panel-head">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 text-center gridFullWidth gt-main-name">
+
+                    <h4 class="gt-margin-top-0 gt-margin-bottom-0">
+                        Aa C ( IN35 )
+                    </h4>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        Register On: 02 Dec 2021 ,07:16 AM </h5>
+                </div>
+                <div class="col-xxl-5 col-xxl-5 col-lg-5 col-xs-16 text-center gridHidden">
+                    <h5 class="gt-margin-top-5 gt-margin-bottom-0">
+                        <!--<i class="fa fa-circle gt-text-green gt-margin-right-10"></i>Online-->
+                        Online </h5>
+                </div>
+            </div>
+        </a>
+        <a href="member-profile?view_id=IN35" target="_blank" class="gt-result-panel-body">
+            <div class="row gt-padding-bottom-15">
+                <div class="col-xxl-2 col-xl-2 col-xs-16 col-lg-3 gridFullWidth">
+                    <div class="thumbnail gt-margin-bottom-0">
+
+                        <img src="./img/female.png" title="Aa Cc" alt="IN35" class="img-responsive gtFullWidth">
+
+
+                    </div>
+                </div>
+                <div class="col-xxl-14 col-xl-14 col-xs-16 col-lg-13 gt-margin-top-10 gridFullWidth">
+                    <div class="row">
+                        <div class="redirect">
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Age :
+                </label>
+                                    <span class="col-xs-9">
+                  26 years 9 months  											
+                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7 ">Height :
+                </label>
+                                    <span class="col-xs-9">
+                  5ft 9in                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden ">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Religion :
+                </label>
+                                    <span class="col-xs-9">
+                  Christian                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Caste :
+                </label>
+                                    <span class="col-xs-9">
+                  Christian - Others                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridFullWidth">
+                                <p class="row gt-margin-bottom-0 ">
+                                    <label class="col-xs-7 gridHidden">Location :
+                </label>
+                                    <span class="col-xs-9 gridFullWidth">
+                  Achanakmar, India                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Education :
+                </label>
+                                    <span class="col-xs-9">
+                   B Phil,  B.Pharm                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Mother Tongue :
+                </label>
+                                    <span class="col-xs-9">
+                   Bihari                </span>
+                                </p>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8 col-xs-16 gridHidden">
+                                <p class="row gt-margin-bottom-0">
+                                    <label class="col-xs-7">Occupation :
+                </label>
+                                    <span class="col-xs-9">
+                  Consultant                </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--<div class="col-xxl-16 col-xl-16 col-xs-16 gridHidden">
+<p class="row gt-margin-bottom-0">
+<label class="col-xs-16 col-xxl-3 col-xl-3 col-lg-16">About Me :</label>
+<span class="col-xs-16 col-xxl-13 col-xl-13 col-lg-16">
+<span class="col-xs-16 gt-profile-me">
+dfdfdfdf dsfdsf  fdghfgfd fg gfd gfd d fdg fg fdgfgh gf fdgfdg  gfdgfg fdgfd gfgfg dfgfd fgf gf fd...
+Read More <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>
+</span>
+</span>
+</p>
+</div>-->
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="gt-result-panel-footer">
+            <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 gt-margin-top-10 gridHidden">
+                    <a href="login" class="btn btn-default btn-block btn-xl">
+          <i class="fa fa-envelope">
+          </i> Send Message
+        </a>
+                </div>
+                <div class="col-xxl-11 col-xl-11 col-lg-11 pull-right gridFullWidth">
+                    <div class="row">
+                        <div class="col-xxl-5 col-xl-5 col-xs-16 col-lg-5 gt-margin-top-10 gridFullWidth">
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN35" title="Add to Blocklist">
+            <i class="fa fa-ban gt-margin-right-5">
+            </i>Add to Blocklist
+            </a>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-xs-16 gt-margin-top-10 gridHidden">
+                            <a href="login" class="btn btn-default btn-block gt-cursor " id="IN35" title="Add to Shortlist">
+        <i class="fa fa-sort gt-margin-right-5">
+        </i>Add to Shortlist
+        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <div class="modal fade-in" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade-in" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade-in" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade-in" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <script src="js/function.js" type="text/javascript">
+    </script>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content ">
+                <form name="saved_search_form" id="saved_search_form" method="post" action="">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;
+              </span>
+            </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Save Search
+                        </h4>
+                    </div>
+                    <div class="modal-body" id="div_saved_search">
+                        <label>
+      			Saved Search Name :
+      		</label>
+                        <div class="form-group">
+                            <input type="text" name="txt_saved_search_name" id="txt_saved_search_name" class="gt-form-control">
+                        </div>
+                    </div>
+                    <div class="modal-body" id="div_success"></div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn gt-btn-orange" id="sub_saved_search" value="Submit">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Close">
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        nav.center-text {
+            background: none;
+        }
+
+        .current {
+            background: none repeat scroll 0 0 #428bca !important;
+            color: #fff !important;
+        }
+    </style>

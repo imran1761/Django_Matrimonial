@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.validetta-bubble,
+.error {
+    color: #E14D50;
+}
+
+.validetta-bubble {
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    padding: 5px 10px;
+}
