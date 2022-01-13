@@ -9,6 +9,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
+    return render(request, 'home.html')
+
+
+def index(request):
     return render(request, 'index.html')
 
 
@@ -48,13 +52,26 @@ def feedback(request):
     return render(request, 'feedback.html')
 
 
+def image_upload(request):
+    return render(request, 'image_upload.html')
+
+
+def edit(request):
+    return render(request, 'edit.html')
+
+
 # register
-def register(request):
+def index(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            profile = form.cleaned_data.get('profile')
+            gender = form.cleaned_data.get('gender')
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
             username = form.cleaned_data.get('username')
+            mobile = form.cleaned_data.get('mobile')
             email = form.cleaned_data.get('email')
 
             # mail system
@@ -67,7 +84,7 @@ def register(request):
             msg.attach_alternative(html_content, "text/html")
             msg.send()
             messages.success(request, f'Hi {username}, your account was created successfully')
-            return redirect('index')
+            return redirect('login')
     else:
         form = UserRegisterForm()
 

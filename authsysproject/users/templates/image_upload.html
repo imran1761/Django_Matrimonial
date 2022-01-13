@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 
 <html>
@@ -20,151 +22,40 @@
                     }
                 </script>
                 <!-- HEADER END-->
-            <style>
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Photo Like FB DP</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
 
-body {
-  background-color: #f1f1f1;
-}
+<h1>Upload Your Profile Pitcher</h1>
 
-#regForm {
-  background-color: #ffffff;
-  margin: 100px auto;
-  font-family: Raleway;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-}
-
-h1 {
-  text-align: center;
-}
-
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-button {
-  background-color: #04AA6D;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-family: Raleway;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-#prevBtn {
-  background-color: #bbbbbb;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
-</style>
-<div class="row">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-   <div id="profile-container">
-      <div class="small-12 medium-2 large-2 columns">
-         <div id="circle">
-   <image id="profileImage" src="http://lorempixel.com/100/100"></image>
-   <i class="fa fa-camera upload-button"></i>
-<input id="imageUpload" type="file"
-       name="profile_photo" placeholder="Photo" required="" capture="">
-         </div>
-      </div>
-   </div>
+<div class="profile-pic-div">
+  <img src="{% static 'img/image.jpg' %}" id="photo">
+  <input type="file" id="file">
+  
+  <label for="file" id="uploadBtn">Choose Photo</label>
 </div>
-<script>
-    $("#profileImage").click(function(e) {
-    $("#imageUpload").click();
-});
 
-function fasterPreview( uploader ) {
-    if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src',
-             window.URL.createObjectURL(uploader.files[0]) );
-    }
-}
+<form action="save_pic">
+    <div class="container">
+         <img src="{% static 'img/img_light.png' %}" alt="Snow" style="width:100%; height:500">
+        <button class="btn1">Delete</button>
+    </div>
+    <div class="container">
+        <button class="btn2" >Save</button>
+    </div>
+</form>
 
-$("#imageUpload").change(function(){
-    fasterPreview( this );
-});
-</script>
-<style>
+<script src="{% static 'js/app.js' %}"></script>
 
-<!--#circle {-->
-<!--    border-radius: 100% !important;-->
-<!--    overflow: hidden;-->
-<!--    width: 128px;-->
-<!--    height: 128px;-->
-<!--    border: 2px solid rgba(255, 255, 255, 0.2);-->
-<!--    position: absolute;-->
-<!--    top: 72px;-->
-<!--}-->
-    #imageUpload
-{
-    display: none;
-}
+</body>
+</html>
 
-#profileImage
-{
-    cursor: pointer;
-}
-
-#profile-container {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-}
-
-#profile-container img {
-    width: 150px;
-    height: 150px;
-}
-</style>
 <script type="text/javascript">
             var auto_refresh = setInterval(
                 function() {
@@ -276,4 +167,5 @@ $("#imageUpload").change(function(){
         });
     }
 </script>
+
 {% endblock %}
