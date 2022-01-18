@@ -56,6 +56,10 @@ def image_upload(request):
     return render(request, 'image_upload.html')
 
 
+def kyc_doc(request):
+    return render(request, 'kyc_doc.html')
+
+
 def edit(request):
     return render(request, 'edit.html')
 

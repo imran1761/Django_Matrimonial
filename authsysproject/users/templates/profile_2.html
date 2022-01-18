@@ -121,84 +121,84 @@ button:hover {
         <body>
         <form id="register_form" name="register_form" method="post" action="" class="">
             {% csrf_token %}
-        <div class="tab">
-            <h4 class="gtRegTitle gt-margin-top-30">
-                <i class="fa fa-file-text gt-margin-right-10"></i> Account Information
-            </h4>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xxl-5 col-xs-16 col-lg-5">
-                        <label class="gt-text-light-Grey">
-                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>First Name</b>
-                        </label>
-                    </div>
-                    <div class="col-xxl-11 col-xs-16 col-lg-11">
-                        <input type="text" class="gt-form-control" name="fname" id="fname" data-validetta="required" placeholder="Enter Your Firstname" value="{{values.first_name}}">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xxl-5 col-xs-16 col-lg-5">
-                        <label class="gt-text-light-Grey">
-                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Last Name</b>
-                        </label>
-                    </div>
-                    <div class="col-xxl-11 col-xs-16 col-lg-11">
-                        <input type="text" class="gt-form-control" name="lname" id="lname" data-validetta="required" placeholder="Enter Your Lastname" value="{{values.last_name}}">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xxl-5 col-xs-16 col-lg-5">
-                        <label class="gt-text-light-Grey">
-                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Email Id</b>
-                        </label>
-                    </div>
-                    <div class="col-xxl-11 col-xs-16 col-lg-11">
+<!--        <div class="tab">-->
+<!--            <h4 class="gtRegTitle gt-margin-top-30">-->
+<!--                <i class="fa fa-file-text gt-margin-right-10"></i> Account Information-->
+<!--            </h4>-->
+<!--            <div class="form-group">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xxl-5 col-xs-16 col-lg-5">-->
+<!--                        <label class="gt-text-light-Grey">-->
+<!--                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>First Name</b>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-xxl-11 col-xs-16 col-lg-11">-->
+<!--                        <input type="text" class="gt-form-control" name="fname" id="fname" data-validetta="required" placeholder="Enter Your Firstname" value="{{values.first_name}}">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xxl-5 col-xs-16 col-lg-5">-->
+<!--                        <label class="gt-text-light-Grey">-->
+<!--                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Last Name</b>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-xxl-11 col-xs-16 col-lg-11">-->
+<!--                        <input type="text" class="gt-form-control" name="lname" id="lname" data-validetta="required" placeholder="Enter Your Lastname" value="{{values.last_name}}">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xxl-5 col-xs-16 col-lg-5">-->
+<!--                        <label class="gt-text-light-Grey">-->
+<!--                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Email Id</b>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-xxl-11 col-xs-16 col-lg-11">-->
 
-                        <input type="text" class="gt-form-control" name="email" id="email" data-validetta="required,email" value="{{values.email}}" placeholder="Enter Your Proper Email Id">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xxl-5 col-xs-16 col-lg-5">
-                        <label class="gt-text-light-Grey">
-                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Password</b>
-                        </label>
-                    </div>
-                    <div class="col-xxl-11 col-xs-16 col-lg-11">
-                        <input type="password" class="gt-form-control" name="password" id="password" value="" placeholder="Enter Your Password" data-validetta="required,minLength[5]">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xxl-5 col-xs-16 col-lg-5">
-                        <label class="gt-text-light-Grey">
-                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Confirm Password</b>
-                        </label>
-                    </div>
-                    <div class="col-xxl-11 col-xs-16 col-lg-11">
-                        <input type="password" class="gt-form-control " name="cpassword" id="cpassword" data-validetta="required,equalTo[password]" value="" placeholder="Enter Your Confirm Password">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-xxl-5 col-xs-16 col-lg-5">
-                        <label class="gt-text-light-Grey">
-                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Mobile No.</b>
-                        </label>
-                    </div>
-                    <div class="col-xxl-11 col-xs-16 col-lg-11">
-                        <input type="text" class="gt-form-control" name="mobile" id="mobile" data-validetta="required" value="{{values.phone}}" placeholder="Enter Your Mobile No">
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--                        <input type="text" class="gt-form-control" name="email" id="email" data-validetta="required,email" value="{{values.email}}" placeholder="Enter Your Proper Email Id">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xxl-5 col-xs-16 col-lg-5">-->
+<!--                        <label class="gt-text-light-Grey">-->
+<!--                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Password</b>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-xxl-11 col-xs-16 col-lg-11">-->
+<!--                        <input type="password" class="gt-form-control" name="password" id="password" value="" placeholder="Enter Your Password" data-validetta="required,minLength[5]">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xxl-5 col-xs-16 col-lg-5">-->
+<!--                        <label class="gt-text-light-Grey">-->
+<!--                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Confirm Password</b>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-xxl-11 col-xs-16 col-lg-11">-->
+<!--                        <input type="password" class="gt-form-control " name="cpassword" id="cpassword" data-validetta="required,equalTo[password]" value="" placeholder="Enter Your Confirm Password">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xxl-5 col-xs-16 col-lg-5">-->
+<!--                        <label class="gt-text-light-Grey">-->
+<!--                            <b class="text-danger gt-margin-right-5 gtRegMandatory">*</b><b>Mobile No.</b>-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col-xxl-11 col-xs-16 col-lg-11">-->
+<!--                        <input type="text" class="gt-form-control" name="mobile" id="mobile" data-validetta="required" value="{{values.phone}}" placeholder="Enter Your Mobile No">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="tab">
             <h4 class="gtRegTitle gt-margin-top-30">
                 <i class="fa fa-user gt-margin-right-10"></i>Some Personal Information
@@ -232,7 +232,10 @@ button:hover {
                         </label>
                     </div>
                     <div class="col-xxl-11 col-xs-16 col-lg-11 gt-margin-top-10">
-                        <input type="date" id="birthday" name="birthday" class="form-control" placeholder="Religion" value=""><br>
+                        <div class="col-md-6">
+                        <input type="date" id="birthday" name="birthday" class="form-control" placeholder="birthday" value=""><br>
+                        <input type="text" id="age" name="age" class="form-control" placeholder="age" value=""><br>
+                        </div>
 
 <!--                        <label for="male" class="gt-inline-block">-->
 <!--                            <span class="pull-left gt-margin-right-10">-->
@@ -3408,7 +3411,7 @@ chapterSel.length = 1;
                 <input type="checkbox" name="chk_terms" checked> <span class="gt-margin-left-10">I read all <a href="cms?cms_id=6" target="_blank">Privacy Policy</a> and agreed with <a href="cms?cms_id=7" target="_blank">Terms & Condition</a>.</span>
             </div>
             <div class="form-group text-center col-xxl-offset-3">
-                <input type="submit" name="submit" id="submit" value="Continue" class="btn gt-btn-green gt-btn-xxl">
+<!--                <input type="submit" name="submit" id="submit" value="Continue" class="btn gt-btn-green gt-btn-xxl">-->
             </div>
         </div>
             <div style="overflow:auto;">

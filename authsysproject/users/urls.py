@@ -20,6 +20,7 @@ urlpatterns = [
     path('search/', auth_view.LogoutView.as_view(template_name='search.html'), name='search'),
     path('feedback/', auth_view.LogoutView.as_view(template_name='feedback.html'), name='feedback'),
     path('image_upload/', auth_view.LogoutView.as_view(template_name='image_upload.html'), name='image_upload'),
+    path('kyc_doc/', auth_view.LoginView.as_view(template_name='kyc_doc.html'), name='kyc_doc'),
     path('edit/', auth_view.LogoutView.as_view(template_name='edit.html'), name='edit'),
     # path('login/', auth_view.LoginView.as_view(), name="login"),
 ]
